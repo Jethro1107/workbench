@@ -1,6 +1,6 @@
 # Vault
 
-Current state of the Obsidian vault at `C:/Users/jethr/Desktop/Obsidian`. Query `obsidian "Obsidian" folders` and `obsidian "Obsidian" files` to confirm before relying on any path here — vault structure evolves.
+Current state of the Obsidian vault at `~/Desktop/Obsidian`. Query `obsidian "Obsidian" folders` and `obsidian "Obsidian" files` to confirm before relying on any path here — vault structure evolves.
 
 ## Folders
 

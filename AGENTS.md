@@ -4,8 +4,8 @@ A focused workbench for clinical research note-taking: read sources, take notes,
 
 ## Layout
 
-- Workspace root: `C:/Users/jethr/work`
-- Obsidian vault: `C:/Users/jethr/Desktop/Obsidian` (vault name: `Obsidian`)
+- Workspace root: `~/workbench`
+- Obsidian vault: `~/Desktop/Obsidian` (vault name: `Obsidian`)
 - Zotero: local instance, PDFs in Google Drive
 
 ## Agents
@@ -18,7 +18,7 @@ A focused workbench for clinical research note-taking: read sources, take notes,
 
 Permissions, tools, and frontmatter are in each agent's file.
 
-## Commands
+## Commands (slash commands)
 
 | Command | Primary | Purpose |
 |---|---|---|
@@ -84,24 +84,24 @@ Cross-session, non-ephemeral knowledge. Read on demand.
 - **Never write to the Obsidian vault without user approval.** Compose locally in `sessions/{id}/drafts/` → researcher inspects → writer writes.
 - **Never modify the Zotero library** unless the user explicitly asks.
 - **Do not hard-code vault structure.** Read `_meta/vault.md` and re-query the vault.
-- **Do not duplicate content across files.** If a fact lives in `_meta/`, the agent/command/skill file references it; it does not restate it.
+- **Do not duplicate content across files.** If a fact lives in `_meta/`, the agent/prompt/skill file references it; it does not restate it.
 
 ## Single-source rule
 
 Each piece of information lives in exactly one file:
 
-- Role + permissions + workflow boundaries → agent file
-- Procedures for one capability → skill file
-- Workflow orchestration → command file
-- Declarative knowledge about the world → meta file
+- Role + permissions + workflow boundaries → agent file (`.opencode/agents/*.md`)
+- Procedures for one capability → skill file (`.opencode/skills/<name>/SKILL.md`)
+- Workflow orchestration → command file (`.opencode/commands/*.md`)
+- Declarative knowledge about the world → meta file (`_meta/*.md`)
 - High-level orientation + pointers → this file
 
-Use inline prose references ("see `_meta/voice.md`") or the `references:` frontmatter array on agent, command, and skill files. The `consistency-check` skill audits this rule and reports violations.
+Use inline prose references ("see `_meta/voice.md`") or the `## References (read on demand)` section in agent, prompt, and skill files. The `consistency-check` skill audits this rule and reports violations.
 
 ## VSCode workflow
 
-Opencode runs as a VSCode extension. The session workspace is visible in the editor; drafts can be edited in place; the agent reads them back via file tools. To collaborate on a fleeting note during a workflow, edit the file in the session's `drafts/` or `inputs/` folder directly.
+The harness runs inside VS Code Copilot. The session workspace is visible in the editor; drafts can be edited in place; the agent reads them back via file tools. To collaborate on a fleeting note during a workflow, edit the file in the session's `drafts/` or `inputs/` folder directly.
 
 ## Run a `consistency-check`
 
-To audit the harness itself (duplicated facts, broken references, permission mismatches, unresolved skill names in command bodies), invoke the `consistency-check` skill. Read-only; does not touch zotero or the Obsidian vault.
+To audit the harness itself (duplicated facts, broken references, unresolved skill names in prompt bodies), invoke the `consistency-check` skill. Read-only; does not touch zotero or the Obsidian vault.

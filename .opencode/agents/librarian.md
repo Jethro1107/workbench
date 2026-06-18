@@ -66,7 +66,7 @@ Full patterns: `_meta/zotero.md` and `.opencode/skills/zotero-use/SKILL.md`.
 
 ## Obsidian
 
-The Obsidian vault is **`Obsidian`** at `C:/Users/jethr/Desktop/Obsidian`. Always pass `"Obsidian"` as the first argument to the `obsidian` CLI. Always invoke the `obsidian-cli` skill when querying the vault.
+The vault name is **`Obsidian`** — the `obsidian-cli` skill resolves the actual path at runtime. Always pass `"Obsidian"` as the first argument to the `obsidian` CLI. Always invoke the `obsidian-cli` skill when querying the vault.
 
 ```bash
 obsidian "Obsidian" search query="..."

@@ -9,14 +9,18 @@ references:
   - ../.opencode/agents/researcher.md
   - ../.opencode/agents/writer.md
   - ../.opencode/agents/librarian.md
-  - ../skills/obsidian-cli/SKILL.md
-  - ../skills/link-suggest/SKILL.md
-  - ../skills/decompose/SKILL.md
-  - ../skills/tag-note/SKILL.md
-  - ../skills/provenance/SKILL.md
+  - ../.opencode/skills/obsidian-cli/SKILL.md
+  - ../.opencode/skills/link-suggest/SKILL.md
+  - ../.opencode/skills/decompose/SKILL.md
+  - ../.opencode/skills/tag-note/SKILL.md
+  - ../.opencode/skills/provenance/SKILL.md
 ---
 
 # Integrate
+
+- Prior to any workflow:
+  - Confirm whether a session workspace has been created for the current session
+  - If it has not been created, run the `session-workspace` skill
 
 ## Inputs
 
@@ -26,13 +30,13 @@ references:
 ## Workflow
 
 1. **Researcher** reads the source material.
-2. **Researcher** scans the vault (`obsidian "Obsidian" search`) for permanent notes that are related.
+2. **Librarian** scans the vault using the `obsidian-cli` skill (`obsidian "Obsidian" search`) for permanent notes that are related.
 3. **Researcher** produces an integration plan at `sessions/{id}/drafts/{date}-integrate-plan.md` with one entry per affected permanent note. Each entry lists:
    - The note's path
    - The proposed change type: (a) edit, (b) atomic split via `decompose`, (c) new permanent note
    - A draft of the change
-4. **Researcher** runs `provenance` over the affected notes to verify the integration is properly sourced.
-5. **Researcher** runs `link-suggest` to propose `[[wikilinks]]` between affected notes and the new content.
+4. **Researcher** runs `provenance` skill over the affected notes to verify the integration is properly sourced.
+5. **Researcher** runs `link-suggest` skill to propose `[[wikilinks]]` between affected notes and the new content.
 6. **User** reviews and approves the plan.
 7. **Writer** applies the edits and creates any new notes. For new notes, the writer reads `_meta/voice.md` and applies `tag-note`.
 8. **Writer** writes to Obsidian.

@@ -1,0 +1,15 @@
+{
+  "github.copilot.chat.model": "MiniMax-M3 (copilot)",
+  "chat.tools.terminal.autoApprove": {
+    "zot": true,
+    "pip": true,
+    "/^python3 -c \"from pyzotero import zot; z = zot\\.Zotero\\(0, 'user'\\); item = z\\.item\\('bjornsonCroup2008'\\); print\\(item\\)\"$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "/^python3 -c \"import pyzotero; print\\(dir\\(pyzotero\\)\\)\"$/": {
+      "approve": true,
+      "matchCommandLine": true
+    }
+  }
+}

@@ -6,8 +6,8 @@ references:
   - ../_meta/vault.md
   - ../_meta/zotero.md
   - ../.opencode/agents/librarian.md
-  - ../skills/zotero-use/SKILL.md
-  - ../skills/obsidian-cli/SKILL.md
+  - ../.opencode/skills/zotero-use/SKILL.md
+  - ../.opencode/skills/obsidian-cli/SKILL.md
 ---
 
 # Query

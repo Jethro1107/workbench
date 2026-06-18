@@ -10,11 +10,11 @@ references:
   - ../.opencode/agents/researcher.md
   - ../.opencode/agents/writer.md
   - ../.opencode/agents/librarian.md
-  - ../skills/obsidian-cli/SKILL.md
-  - ../skills/zotero-use/SKILL.md
-  - ../skills/link-suggest/SKILL.md
-  - ../skills/decompose/SKILL.md
-  - ../skills/tag-note/SKILL.md
+  - ../.opencode/skills/obsidian-cli/SKILL.md
+  - ../.opencode/skills/zotero-use/SKILL.md
+  - ../.opencode/skills/link-suggest/SKILL.md
+  - ../.opencode/skills/decompose/SKILL.md
+  - ../.opencode/skills/tag-note/SKILL.md
 ---
 
 # Synthesis

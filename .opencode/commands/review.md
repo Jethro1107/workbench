@@ -6,8 +6,8 @@ references:
   - ../_meta/vault.md
   - ../_meta/tags.md
   - ../.opencode/agents/librarian.md
-  - ../skills/obsidian-cli/SKILL.md
-  - ../skills/link-suggest/SKILL.md
+  - ../.opencode/skills/obsidian-cli/SKILL.md
+  - ../.opencode/skills/link-suggest/SKILL.md
 ---
 
 # Review
